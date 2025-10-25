@@ -7,7 +7,10 @@ let dbConnect = require("./dbConnect");
 app.use(express.json());
 
 const userRoutes = require('./routes/userRoutes');
+const postRoutes = require('./routes/postRoutes');
+
 app.use('/api/users', userRoutes);
+app.use('/api/posts', postRoutes);
 
 app.get("/", (req, res) => {
     res.json({
